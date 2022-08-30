@@ -235,7 +235,12 @@ def get_movies(filters, page, movies_per_page):
 
     # TODO: Paging
     # Use the cursor to only return the movies that belong on the current page.
-    movies = cursor.limit(movies_per_page).skip(movies_per_page*page)
+    if page == 0:
+        movies = cursor.limit(movies_per_page)
+    else:
+        movies = cursor.skip(int(page) * int(movies_per_page)).limit(movies_per_page)
+
+    #movies = cursor.skip(movies_per_page*page).limit(movies_per_page)
     return (list(movies), total_num_movies)
 
 
