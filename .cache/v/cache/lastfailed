@@ -1,4 +1,5 @@
 {
+  "tests/test_get_comments.py::test_comments_should_be_sorted_by_date": true,
   "tests/test_paging.py::test_supports_paging_by_text": true,
   "tests/test_user_management.py::test_no_duplicate_registrations": true
 }
